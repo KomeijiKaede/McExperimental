@@ -16,7 +16,7 @@
 			"dependencies": [ "Forge" ],
 			"parent": "",
 			"requiredMods": [ "Forge" ],
-			"logoFile": "/assets/mcexperimental/logo.png",
+			"logoFile": "/assets/mcexperimentalmod/logo.png",
 			"screenshots": [  ],
 			"updateUrl": "",
 			"url": "",

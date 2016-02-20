@@ -1,4 +1,4 @@
-package com.kamesuta.mc.experimental;
+package com.kamesuta.mc.experimentalmod;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
