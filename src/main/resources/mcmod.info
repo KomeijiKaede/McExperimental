@@ -1,16 +1,47 @@
-[
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
+	"modListVersion": 2,
+	"modList": [
+		{
+			"modid": "McExperimentalMod",
+			"name": "McExperimentalMod",
+			"description": "This is the TEST project for my minecraft modding!! :-)",
+			"mcversion": "${mcversion}",
+			"version": "${version}",
+			"authorList": [
+				"Kamesuta",
+				"KomeijiKaede"
+			],
+			"credits": "©2016 TeamFruit",
+			"dependants": [  ],
+			"dependencies": [ "Forge" ],
+			"parent": "",
+			"requiredMods": [ "Forge" ],
+			"logoFile": "/assets/mcexperimental/logo.png",
+			"screenshots": [  ],
+			"updateUrl": "",
+			"url": "",
+			"useDependencyInformation": true
+		},
+		{
+			"modid": "SampleItemCore",
+			"name": "SampleItemCore",
+			"description": "Sample item",
+			"mcversion": "${mcversion}",
+			"version": "${version}",
+			"authorList": [
+				"Kamesuta",
+				"KomeijiKaede"
+			],
+			"credits": "©2016 TeamFruit",
+			"dependants": [  ],
+			"dependencies": [ "Forge" ],
+			"parent": "",
+			"requiredMods": [ "Forge" ],
+			"logoFile": "/assets/sampleitemcore/logo.png",
+			"screenshots": [  ],
+			"updateUrl": "",
+			"url": "",
+			"useDependencyInformation": true
+		}
+	]
 }
-]
