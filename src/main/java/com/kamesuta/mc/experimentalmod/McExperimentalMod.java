@@ -7,6 +7,7 @@ import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockPane;
 import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockSlab;
 import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockStair;
 import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockTorch;
+import com.kamesuta.mc.experimentalmod.nullblocks.NullFluidFlowing;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -34,6 +35,7 @@ public class McExperimentalMod {
 	public static Block BlockNullPane;
 	public static Block BlockNullLadder;
 	public static Block BlockNullTorch;
+	public static Block FluidNull;
 
 	// レンダーIDの取得
 	public static int RenderID;
@@ -76,6 +78,13 @@ public class McExperimentalMod {
 		.setBlockTextureName(Reference.MODID + ":wool_null")
 		.setLightOpacity(15)
 		.setLightLevel(15);
+		
+		FluidNull = new NullFluidFlowing()
+		.setBlockName("fluidNull")
+		.setBlockTextureName(Reference.MODID + ":wool_null")
+		.setHardness(100f)
+		.setLightOpacity(3)
+		.setCreativeTab(CreativeTabs.tabBlock);
 
 		GameRegistry.registerBlock(BlockNull, "BlockNull");
 		GameRegistry.registerBlock(BlockNullStair, "BlockNullStair");
@@ -84,6 +93,7 @@ public class McExperimentalMod {
 		GameRegistry.registerBlock(BlockNullPane, "BlockNullPane");
 		GameRegistry.registerBlock(BlockNullLadder, "BlockNullLadder");
 		GameRegistry.registerBlock(BlockNullTorch, "BlockNullTorch");
+		GameRegistry.registerBlock(FluidNull, "FluidNull");
 	}
 
 	@EventHandler
