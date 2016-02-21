@@ -26,6 +26,8 @@ public class McExperimentalMod {
 	@Instance(Reference.MODID)
 	public static McExperimentalMod instance;
 
+	//SUSHI
+
 	// 追加するブロックの定義
 	/* public static Block * ; */
 	public static Block BlockNull;
