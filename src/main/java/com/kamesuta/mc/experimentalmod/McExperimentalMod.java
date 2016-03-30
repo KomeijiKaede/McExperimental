@@ -1,14 +1,5 @@
 package com.kamesuta.mc.experimentalmod;
 
-import com.kamesuta.mc.experimentalmod.nullblocks.NullBlock;
-import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockFence;
-import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockLadder;
-import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockPane;
-import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockSlab;
-import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockStair;
-import com.kamesuta.mc.experimentalmod.nullblocks.NullBlockTorch;
-import com.kamesuta.mc.experimentalmod.nullblocks.NullFluidFlowing;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -16,20 +7,44 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class McExperimentalMod {
 	@Instance(Reference.MODID)
 	public static McExperimentalMod instance;
 
+	// レンダーIDの取得
+	public static int RenderID;
+
+	@EventHandler
+	public void perInit(FMLPreInitializationEvent event) {
+
+	}
+
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+
+	}
+
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+
+	}
+
+	@EventHandler
+	public void serverStarting(FMLServerStartingEvent event) {
+
+	}
+}
+
+/*public class McExperimentalMod {
+	@Instance(Reference.MODID)
+	public static McExperimentalMod instance;
+
 	//SUSHI
 
 	// 追加するブロックの定義
-	/* public static Block * ; */
+	 public static Block * ;
 	public static Block BlockNull;
 	public static Block BlockNullStair;
 	public static Block BlockNullSlab;
@@ -80,7 +95,7 @@ public class McExperimentalMod {
 		.setBlockTextureName(Reference.MODID + ":wool_null")
 		.setLightOpacity(15)
 		.setLightLevel(15);
-		
+
 		FluidNull = new NullFluidFlowing()
 		.setBlockName("fluidNull")
 		.setBlockTextureName(Reference.MODID + ":wool_null")
@@ -112,4 +127,4 @@ public class McExperimentalMod {
 	public void serverStarting(FMLServerStartingEvent event) {
 
 	}
-}
+}*/
