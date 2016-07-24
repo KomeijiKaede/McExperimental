@@ -1,7 +1,6 @@
 package com.kamesuta.mc.experimentalmod;
 
-<<<<<<< HEAD
-=======
+
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 >>>>>>> refs/remotes/origin/master
@@ -15,7 +14,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 <<<<<<< HEAD
 =======
 import net.minecraft.client.settings.KeyBinding;
->>>>>>> refs/remotes/origin/master
+
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class McExperimentalMod {
@@ -26,33 +25,14 @@ public class McExperimentalMod {
 	public static int RenderID;
 
 	@EventHandler
-<<<<<<< HEAD
-	public void perInit(FMLPreInitializationEvent event) {
 
-	}
-
-	@EventHandler
-	public void init(FMLInitializationEvent event) {
-
-	}
-
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-
-	}
-
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event) {
-=======
 	public void perInit(final FMLPreInitializationEvent event) {
-		for (final KeyBinding keyBinding : InputHandler.KEY_BINDINGS) {
-			ClientRegistry.registerKeyBinding(keyBinding);
-		}
+
 	}
 
 	@EventHandler
 	public void init(final FMLInitializationEvent event) {
-		FMLCommonHandler.instance().bus().register(InputHandler.INSTANCE);
+
 	}
 
 	@EventHandler
@@ -60,14 +40,33 @@ public class McExperimentalMod {
 
 	}
 
-	@EventHandler
-	public void serverStarting(final FMLServerStartingEvent event) {
->>>>>>> refs/remotes/origin/master
+	//	@EventHandler
+	//	public void serverStarting(FMLServerStartingEvent event) {
+	//
+	//	public void perInit(final FMLPreInitializationEvent event) {
+	//		for (final KeyBinding keyBinding : InputHandler.KEY_BINDINGS) {
+	//			ClientRegistry.registerKeyBinding(keyBinding);
+	//		}
+	//	}
+	//
+	//	@EventHandler
+	//	public void init(final FMLInitializationEvent event) {
+	//		FMLCommonHandler.instance().bus().register(InputHandler.INSTANCE);
+	//	}
+	//
+	//	@EventHandler
+	//	public void postInit(final FMLPostInitializationEvent event) {
+	//
+	//	}
+	//
+	//	@EventHandler
+	//	public void serverStarting(final FMLServerStartingEvent event) {
+	//
+	//
+	//	}
+	//}
 
-	}
-}
-
-/*public class McExperimentalMod {
+	/*public class McExperimentalMod {
 	@Instance(Reference.MODID)
 	public static McExperimentalMod instance;
 
