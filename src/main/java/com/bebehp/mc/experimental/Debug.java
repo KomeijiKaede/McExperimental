@@ -8,7 +8,8 @@ public class Debug {
 	public static void main(final String[] args) {
 		final Logger logger = LogManager.getLogger("Debug");
 		// new ModifierExceptionTest().test();
-		new Iteaaaaarator().test1(logger);
+		//		new Iteaaaaarator().test1(logger);
+		new Base64Test(logger);
 	}
 
 }
