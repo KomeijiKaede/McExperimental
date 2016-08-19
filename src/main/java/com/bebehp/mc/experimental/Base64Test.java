@@ -27,7 +27,7 @@ public class Base64Test {
 			logger.info("Encode key: {}", encodeKey);
 			decodeByte = Base64.decodeBase64(encodeKey);
 			decodeKey = new String(decodeByte);
-			logger.info("Decode key: {}", decodeKey);
+			logger.info("Decode key({}): {}", decodeKey.equals(line), decodeKey);
 		}
 	}
 }
