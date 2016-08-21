@@ -20,16 +20,16 @@ import org.apache.logging.log4j.Logger;
 
 public class ByteTest {
 
-	private final byte[] byteKey;
+	private byte[] byteKey;
 	private final File file;
+	private final byte splitByte;
 
 	public ByteTest(final Logger logger) {
+		this.splitByte = 0x2F;
+		this.file = new File(System.getProperty("user.dir"), "test.eew");
 		final byte[] key1 = Base64.encodeBase64("TZ89zhDtYOMka05f8rWCgNq1l9".getBytes());
 		final byte[] key2 = Base64.encodeBase64("QfbdpOOa4WSnLjRuLhKXKioKBkBVZ8If4dYv3TH1HlhTE9uzGoC".getBytes());
-		this.file = new File(System.getProperty("user.dir"), "file.eew");
-
-		final byte splitByte = 0x2F;
-		this.byteKey = joinByte(splitByte, key1, key2);
+		this.byteKey = joinByte(this.splitByte, key1, key2);
 
 		try {
 			this.file.createNewFile();
@@ -52,14 +52,16 @@ public class ByteTest {
 		BufferedInputStream bis = null;
 		try {
 			bis = new BufferedInputStream(new FileInputStream(this.file));
-			bis.read(this.byteKey);
+			final byte[] data = new byte[bis.available()];
+			bis.read(data);
+			this.byteKey = data;
 		} catch (final IOException e) {
 			logger.error(e);
 		} finally {
 			IOUtils.closeQuietly(bis);
 		}
 
-		final List<byte[]> list = splitByte(splitByte, this.byteKey);
+		final List<byte[]> list = splitByte(this.splitByte, this.byteKey);
 		final List<String> decodeList = new ArrayList<String>();
 		for (final byte[] line : list)
 			decodeList.add(new String(Base64.decodeBase64(line)));
@@ -69,10 +71,13 @@ public class ByteTest {
 		logger.info(tweetQuakeKey.getKey2());
 	}
 
-	public byte[] joinByte(final byte splitByte, final byte[]... arrays) {
+	public static byte[] joinByte(final byte splitByte, final byte[]... arrays) {
+		return joinByte(splitByte, Arrays.asList(arrays));
+	}
+
+	public static byte[] joinByte(final byte splitByte, final List<byte[]> arrays) {
 		byte[] joinByte = null;
-		final List list = Arrays.asList(arrays);
-		final Iterator it = list.iterator();
+		final Iterator it = arrays.iterator();
 		while (it.hasNext()) {
 			final byte[] line = (byte[])it.next();
 			joinByte = ArrayUtils.addAll(joinByte, line);
@@ -82,7 +87,7 @@ public class ByteTest {
 		return joinByte;
 	}
 
-	public List<byte[]> splitByte(final byte target, final byte[] array) {
+	public static List<byte[]> splitByte(final byte target, final byte[] array) {
 		final List<byte[]> list = new ArrayList<byte[]>();
 		List<Integer> indexList = new ArrayList<Integer>();
 		indexList = indexAll(target, array);
@@ -98,7 +103,7 @@ public class ByteTest {
 		return list;
 	}
 
-	private List indexAll(final byte target, final byte[] array) {
+	private static List indexAll(final byte target, final byte[] array) {
 		final List<Integer> list = new ArrayList<Integer>();
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] == target)
