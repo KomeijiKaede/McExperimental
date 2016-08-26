@@ -1,4 +1,4 @@
-package com.bebehp.mc.experimental;
+package com.bebehp.mc.experimental.bytes;
 
 import java.io.File;
 import java.io.FileInputStream;
