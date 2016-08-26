@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -26,9 +27,16 @@ public class ByteTest {
 
 	public ByteTest(final Logger logger) {
 		this.splitByte = 0x2F;
-		this.file = new File(System.getProperty("user.dir"), "test.eew");
-		final byte[] key1 = Base64.encodeBase64("TZ89zhDtYOMka05f8rWCgNq1l9".getBytes());
-		final byte[] key2 = Base64.encodeBase64("QfbdpOOa4WSnLjRuLhKXKioKBkBVZ8If4dYv3TH1HlhTE9uzGoC".getBytes());
+		this.file = new File(System.getProperty("user.dir"), "file.eew");
+		byte[] key2 = null;
+		byte[] key1 = null;
+		try {
+			key1 = Base64.encodeBase64("hidden".getBytes("UTF-8"));
+			key2 = Base64.encodeBase64("hidden".getBytes("UTF-8"));
+		} catch (final UnsupportedEncodingException e1) {
+			// TODO 自動生成された catch ブロック
+			e1.printStackTrace();
+		}
 		this.byteKey = joinByte(this.splitByte, key1, key2);
 
 		try {

@@ -10,7 +10,8 @@ public class Debug {
 		// new ModifierExceptionTest().test();
 		//		new Iteaaaaarator().test1(logger);
 		//		new Base64Test(logger);
-		new ByteTest(logger);
+		//		new ByteTest(logger);
+		new ByteOutputTest(logger);
 	}
 
 }
