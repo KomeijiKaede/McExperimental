@@ -1,4 +1,4 @@
-package com.bebehp.mc.experimental;
+package com.bebehp.mc.experimental.bytes;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +19,7 @@ public class Base64Test {
 	private TweetQuakeKey tweetQuakeKey;
 
 	public Base64Test(final Logger logger) {
-		this.keyArray = new String[] {"TZ89zhDtYOMka05f8rWCgNq1l9", "QfbdpOOa4WSnLjRuLhKXKioKBkBVZ8If4dYv3TH1HlhTE9uzGoC"};
+		this.keyArray = new String[] {"hidden", "hidden"};
 		this.file = new File(System.getProperty("user.dir"), "test.eew");
 		try {
 			this.file.createNewFile();
